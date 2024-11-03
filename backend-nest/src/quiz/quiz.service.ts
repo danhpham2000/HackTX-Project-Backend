@@ -38,7 +38,7 @@ export class QuizService {
   };
 
   async generateQuiz(subject: string, numOfQuestions: number) {
-    const prompt = `Generate ${numOfQuestions} questions with ${subject}.  Include options (with letter A, B, C, D) and the correct answer for each question.`;
+    const prompt = `Generate ${numOfQuestions} questions with ${subject}.  Include options and the correct answer for each question.`;
     try {
       const model = this.genAI.getGenerativeModel({
         model: 'gemini-1.5-flash',

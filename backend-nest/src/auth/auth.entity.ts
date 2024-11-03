@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { QuizEntity } from 'src/quiz/quiz.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class AuthEntity {
@@ -16,4 +17,7 @@ export class AuthEntity {
 
   @Column({ type: 'decimal', precision: 4, scale: 2, default: 0 })
   averageScore: number;
+
+  @OneToMany(() => QuizEntity, (quiz) => quiz.user)
+  quizzes: QuizEntity[];
 }

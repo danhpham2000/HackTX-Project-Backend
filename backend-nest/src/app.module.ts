@@ -8,6 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthEntity } from './auth/auth.entity';
 import { QuizModule } from './quiz/quiz.module';
 import 'dotenv'; // Load dotenv early
+import { QuizEntity } from './quiz/quiz.entity';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import 'dotenv'; // Load dotenv early
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
       synchronize: true,
-      entities: [AuthEntity],
+      entities: [AuthEntity, QuizEntity],
     }),
     QuizModule,
   ],

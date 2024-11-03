@@ -18,5 +18,6 @@ import { AuthEntity } from './auth.entity';
   ],
   controllers: [AuthController],
   providers: [AuthService, LocalStrategy],
+  exports: [AuthService],
 })
 export class AuthModule {}

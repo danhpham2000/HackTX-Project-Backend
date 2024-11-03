@@ -14,6 +14,6 @@ export class AuthEntity {
   @Column({ default: 0 })
   quizCompleted: number;
 
-  @Column({ default: 0, precision: 4, scale: 2 })
+  @Column({ type: 'decimal', precision: 4, scale: 2, default: 0 })
   averageScore: number;
 }
